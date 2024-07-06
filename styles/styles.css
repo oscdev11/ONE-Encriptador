@@ -3,16 +3,19 @@
 :root {
     --color-background: #E5E5E5;
     --color-text: #0A3871;
+    --color-text-gray: #495057;
     --font-inter: "Inter", sans-serif;
 }
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
     background-color: var(--color-background);
+    height: 100vh;
 }
 
 .header{
@@ -24,19 +27,20 @@ body{
     height: 3rem;
 }
 
-.presentacion{
+.main{
     display: flex;
     align-items: center;
 }
 
-.presentacion__entradas{
+.main__entradas{
+    display: flex;
     flex-direction: column;
+    margin: 5rem 0 4.5rem 15rem;
 }
 
-.presetnacion__entradas_textarea{
-        margin: 5rem 0 0 15rem;
+.main__entradas_textarea{
     width: 42.5rem;
-    height: auto;
+    height: calc(100% - 4.5rem);
     background: none;
     border: none;
     outline: none;
@@ -46,4 +50,51 @@ body{
     font-family: var(--font-inter);
     font-size: 2rem;
     color: var(--color-text);
+}
+
+.main__entradas_advertencia{
+    display: flex;
+    align-items: center;
+    font-family: var(--font-inter);
+    font-size: 0.75rem;
+    margin-bottom: 1rem;    
+    gap: 0.5rem;
+    color: var(--color-text-gray);
+}
+
+.main__entrada_botones{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__entrada_boton_cifrar{
+    background: var(--color-text);
+    border: 2px solid var(--color-text);
+    border-radius: 1.5rem;
+    width: 20.5rem;
+    height: 4.18rem;
+    gap: 1.5rem;
+    color: white;
+}
+
+.main__entrada_boton_descifrar{
+    background: var(--color-background);
+    border: 2px solid var(--color-text);
+    border-radius: 1.5rem;
+    width: 20.5rem;
+    color: var(--color-text);
+}
+
+.main__salida{
+    background-color: #c73737; /* Fondo blanco */
+    border-radius: 1rem; /* Esquinas redondeadas */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 1.5rem; /* Espaciado interno */
+    width: 300px; /* Ancho de la tarjeta */
+}
+
+.main__salidas_contenido{
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
 }
