@@ -274,7 +274,7 @@ body, html{
     
     .main {
         width: 100%;
-        height: 100%;
+        height: 122%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -373,10 +373,5 @@ body, html{
         font-size: 1rem;
     }
     
-    .main__salida_boton:hover{
-        background: #648fb9;
-        border: 1px solid #648fb9;
-        color: white;
-    }
 
 }

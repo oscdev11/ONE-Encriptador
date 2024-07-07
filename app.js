@@ -72,7 +72,7 @@ function desencriptar() {
 
 
 function copiarTexto() {
-    const textoSalida = document.getElementById('textoSalida');
+    const textoSalida = document.getElementById('textOcultar');
     let textoCopiado = textoSalida.innerText;
     navigator.clipboard.writeText(textoCopiado);
     mostrarMensaje();
