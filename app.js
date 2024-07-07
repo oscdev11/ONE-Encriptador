@@ -1,10 +1,11 @@
 const textoAEncriptar = document.getElementById('textArea');
 const btEncriptar = document.getElementById('btEncriptar');
 const btDesencriptar = document.getElementById('btDesencriptar');
-const textoSalida = document.getElementById('textoSalida');
+const textoSalida = document.getElementById('textOcultar');
 const imagenSalida = document.getElementById('imagenSalida');
 const btCopiar = document.getElementById('btCopiar');
-const textOcultarSalida = document.getElementById('textOcultar');
+const textOcultarSalida = document.getElementById('textoSalida');
+const mainSalida = document.getElementById('main__salida');
 
 const paraEncriptar = {
     'a': 'ai',
@@ -38,7 +39,7 @@ function encriptarTexto() {
         textOcultarSalida.style.display = "none";
         btCopiar.style.display = "block";
         textoSalida.innerText = textoEncriptado;
-        textoSalida.style.textAlign = "left";
+        mainSalida.style.justifyContent = "space-between"
     }
 }
 
@@ -54,6 +55,7 @@ function desencriptar() {
         textOcultarSalida.style.display = "none";
         btCopiar.style.display = "block";
         textoSalida.innerText = texto;
+        textoSalida.style.fontWeight = '';
         textoSalida.style.textAlign = "left";
     }
 }

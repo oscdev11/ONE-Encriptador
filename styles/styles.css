@@ -4,6 +4,8 @@
     --color-background: #E5E5E5;
     --color-text: #0A3871;
     --color-text-gray: #495057;
+    --color-text-gray-500: #343A40;
+    --color-text-gray-400: #495057;
     --font-inter: "Inter", sans-serif;
 }
 
@@ -11,71 +13,86 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+}   
 
-body {
+body, html{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-background);
 }
 
-.header {
-    padding: 2rem 0 0 2rem;
-    margin: auto;
+.header{
+    width: 100%;
+    height: auto;
 }
 
-.header__logo {
+.header__logo{
     width: 7.5rem;
     height: 3rem;
+    margin: 2rem 0 2rem 1rem;
 }
 
-.main {
+.main{
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
+    gap: 5rem;/*probablemente eliminar*/
 }
 
-.main__entradas {
+.main__entradas{
+    width: 70%;
+    height: 100%;
+}
+
+.main__entradas_contenedor{
+    width: 100%;
+    height: 100%;
+    padding: 0 0 4.5rem 7rem;
     display: flex;
     flex-direction: column;
-    margin: 0 5rem 4.5rem 5rem;
-    /*background-color: #648fb9;*/
+    justify-content: end;
 }
 
-.main__entradas_textarea {
-    width: 42.5rem;
-    height: 20rem;
+.main__entradas_textarea{
+    width: 100%;
+    height: 100%;
     background: none;
     border: none;
     outline: none;
     resize: none;
-    overflow: hidden;
     font-family: var(--font-inter);
     font-size: 2rem;
     color: var(--color-text);
 }
 
-.main__entradas_advertencia {
-    display: flex;
-    align-items: center;
+.main__entradas_advertencia{
+    margin-top: 1rem;
     font-family: var(--font-inter);
     font-size: 0.75rem;
-    margin-bottom: 1rem;
     gap: 0.5rem;
-    color: var(--color-text-gray);
-}
-
-.main__entrada_botones {
     display: flex;
-    justify-content: space-between;
 }
 
-.main__entrada_boton_encriptar {
+.main__entrada_botones{
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.main__entrada_boton_encriptar{
     background: var(--color-text);
     border: 1px solid var(--color-text);
-    border-radius: 1.5rem;
-    width: 18rem;
-    height: 3.5rem;
-    gap: 1.5rem;
     color: white;
     font-size: 1rem;
+    border-radius: 1.5rem;
+    height: 3.5rem;
+    width: 21rem;
 }
 
 .main__entrada_boton_encriptar:hover{
@@ -83,13 +100,13 @@ body {
     border: 1px solid #648fb9;
 }
 
-.main__entrada_boton_desencriptar {
+.main__entrada_boton_desencriptar{
     background: var(--color-background);
     border: 1px solid var(--color-text);
-    border-radius: 1.5rem;
-    width: 20.5rem;
     color: var(--color-text);
     font-size: 1rem;
+    border-radius: 1.5rem;
+    width: 21rem;
 }
 
 .main__entrada_boton_desencriptar:hover{
@@ -98,35 +115,36 @@ body {
     color: white;
 }
 
-.main__salida {
+.main__salida{
+    width: 30%;
+    height: 105%;
+    background-color: white;
+    margin: -4.5rem 2.5rem 0 0;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    width: 25rem;
-    height: 37rem;
-    margin: -3.5rem 2.5rem 2.5rem 0;
-    border-radius: 2rem;
-    background-color: white;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
-    padding: 2rem;
     font-family: var(--font-inter);
+    justify-content: center;
+    padding: 2rem 2.5rem 2rem 2.5rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .main__salida_titulo{
     font-size: 1.5rem;
-    font-family: var(--font-inter);
-    font-weight: bold;
+    color: var(--color-text-gray-500);
+    font-weight: 550;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 .main__salida_parrafo{
     font-size: 1rem;
-    font-family: var(--font-inter);
+    color: var(--color-text-gray-400);
     text-align: center;
 }
 
-.main__salida_boton {
+.main__salida_boton{
     background: white;
     border: 1px solid var(--color-text);
     border-radius: 1.5rem;
@@ -141,6 +159,7 @@ body {
     border: 1px solid #648fb9;
     color: white;
 }
+
 
 .mensaje {
     display: flex;
@@ -165,78 +184,77 @@ body {
 
 /* Media Query */
 @media (max-width: 768px) {
+
+    .header__logo{
+        width: 7.5rem;
+        height: 3rem;
+        margin: 3rem 0 1rem 1rem;
+    }
     
     .main {
+        width: 100%;
+        height: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .main__entradas {
-        margin: 0 2.5rem 0 2.5rem; /* Ajustar márgenes para dispositivos pequeños */
-        width: 40rem;
+
+    .main__entradas{
+        width: 100%;
+        height: 80%;
     }
-    .main__salida {
-        margin: 1rem;
+
+    .main__entradas_contenedor{
+        padding: 5rem 3rem 0 3rem;
+
     }
-    .main__entradas_textarea,
-    .main__entrada_boton_encriptar,
-    .main__entrada_boton_desencriptar,
-    .main__salida_boton {
-        width: 100%; /* Ajustar ancho al 100% */
-        font-size: 1rem; /* Ajustar tamaño de fuente */
-    }
-/*
-    .main__entradas {
+    
+    .main__salida{
+        width: 90%;
+        height: 20%;
+        background-color: white;
+        border-radius: 2rem;
         display: flex;
         flex-direction: column;
-        margin: 0 5rem 4.5rem 5rem;
-        background-color: #648fb9;
-    }
-    
-    .main__entradas_textarea {
-        width: 42.5rem;
-        height: 20rem;
-        background: none;
-        border: none;
-        outline: none;
-        resize: none;
-        overflow: hidden;
         font-family: var(--font-inter);
-        font-size: 2rem;
-        color: var(--color-text);
-    }
-    
-    .main__entradas_advertencia {
-        display: flex;
+        justify-content: center;
         align-items: center;
-        font-family: var(--font-inter);
-        font-size: 0.75rem;
-        margin-bottom: 1rem;
-        gap: 0.5rem;
-        color: var(--color-text-gray);
+        justify-content: center;
+        margin: 0 0 4rem 0;
+    }
+
+    .main__salida_imagen{
+        display: none;
     }
     
-    .main__entrada_botones {
-        display: flex;
-        justify-content: space-between;
+    .main__salida_titulo{
+        font-size: 1.5rem;
+        color: var(--color-text-gray-500);
+        font-weight: 550;
+        text-align: center;
+        padding-bottom: 1rem;
     }
     
-    .main__entrada_boton_encriptar {
-        background: var(--color-text);
+    .main__salida_parrafo{
+        font-size: 1rem;
+        color: var(--color-text-gray-400);
+        text-align: center;
+    }
+    
+    .main__salida_boton{
+        background: white;
         border: 1px solid var(--color-text);
         border-radius: 1.5rem;
-        width: 18rem;
+        width: 100%;
         height: 3.5rem;
-        gap: 1.5rem;
-        color: white;
+        color: var(--color-text);
         font-size: 1rem;
     }
     
-    .main__entrada_boton_desencriptar {
-        background: var(--color-background);
-        border: 1px solid var(--color-text);
-        border-radius: 1.5rem;
-        width: 20.5rem;
-        color: var(--color-text);
-        font-size: 1rem;
-    }*/
+    .main__salida_boton:hover{
+        background: #648fb9;
+        border: 1px solid #648fb9;
+        color: white;
+    }
+
 }

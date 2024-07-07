@@ -13,34 +13,36 @@
     <header class="header">
         <img src="./images/logo.svg" alt="logo alura latam" class="header__logo">
     </header>
-    <br>
+
     <main class="main">
         <div class="main__entradas">
-            <textarea id="textArea" class="main__entradas_textarea" placeholder="Ingrese el texto aquí"></textarea>
-            <div class="main__entradas_advertencia">
-                <img src="./images/advertencia.svg" alt="advertencia">
-                <p>Solo letras minúsculas y sin acentos.</p>
-            </div>
-            <div class="main__entrada_botones">
-                <button id="btEncriptar" onclick="encriptarTexto();" class="main__entrada_boton_encriptar">Encriptar</button>
-                <button id="btDesencriptar" onclick="desencriptar();" class="main__entrada_boton_desencriptar">Desencriptar</button>
+            <div class="main__entradas_contenedor">
+                <textarea id="textArea" class="main__entradas_textarea" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="main__entradas_advertencia">
+                    <img src="./images/advertencia.svg" alt="advertencia">
+                    <p>Solo letras minúsculas y sin acentos.</p>
+                </div>
+                <div class="main__entrada_botones">
+                    <button id="btEncriptar" onclick="encriptarTexto();"
+                        class="main__entrada_boton_encriptar">Encriptar</button>
+                    <button id="btDesencriptar" onclick="desencriptar();"
+                        class="main__entrada_boton_desencriptar">Desencriptar</button>
+                </div>
             </div>
         </div>
 
-        <div class="main__salida">
-            <img id="imagenSalida" src="./images/notFound.svg" alt="notFound">
+        <div class="main__salida" id="main__salida">
+            <img class="main__salida_imagen" id="imagenSalida" src="./images/notFound.svg" alt="notFound">
             <p id="textOcultar" class="main__salida_titulo">Ningún mensaje fue encontrado</p>
             <p id="textoSalida" class="main__salida_parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
-            <button id="btCopiar" onclick="copiarTexto()" hidden="true" class="main__salida_boton">Copiar</button>
+            <button id="btCopiar" onclick="copiarTexto()" class="main__salida_boton" hidden="true">Copiar</button>
         </div>
         <div id="mensajeTemporal" class="mensaje">Mensaje copiado.</div>
-
     </main>
 
     <footer></footer>
 
     <script src="app.js"></script>
-
 </body>
 
 </html>
