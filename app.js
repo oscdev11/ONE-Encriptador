@@ -1,23 +1,76 @@
 const textoAEncriptar = document.getElementById('textArea');
 const btEncriptar = document.getElementById('btEncriptar');
 const btDesencriptar = document.getElementById('btDesencriptar');
-const textoDesencriptado = document.getElementById('textoDesencriptado');
+const textoSalida = document.getElementById('textoSalida');
+const imagenSalida = document.getElementById('imagenSalida');
+const btCopiar = document.getElementById('btCopiar');
+const textOcultarSalida = document.getElementById('textOcultar');
 
-let vocal = [
-    ["a", "ai"],
-    ["e", "enter"],
-    ["i", "imes"],
-    ["o", "ober"],
-    ["u", "ufat"],
-];
+const paraEncriptar = {
+    'a': 'ai',
+    'e': 'enter',
+    'i': 'imes',
+    'o': 'ober',
+    'u': 'ufat'
+};
+
+const paraDesencriptar = {
+    'ai': 'a',
+    'enter': 'e',
+    'imes': 'i',
+    'ober': 'o',
+    'ufat': 'u'
+};
+
 
 function encriptarTexto() {
-    const texto = textoAEncriptar.value.toLowerCase();
-    let textoEncriptado = "";
-    for (let i = 0; i < vocal.length; i++) {
-        if (texto.includes(vocal[i][0])) {
-            textoEncriptado = texto.replaceAll(vocal[i][0], vocal[i][1]);
-        };
-    };
-    console.log(textoEncriptado);
+    const textoOriginal = textoAEncriptar.value.toLowerCase();
+    if (textoOriginal.length > 0) {
+        let textoEncriptado = '';
+        for (let caracter of textoOriginal) {
+            if (paraEncriptar.hasOwnProperty(caracter)) {
+                textoEncriptado += paraEncriptar[caracter];
+            } else {
+                textoEncriptado += caracter;
+            }
+        }
+        imagenSalida.style.display = "none";
+        textOcultarSalida.style.display = "none";
+        btCopiar.style.display = "block";
+        textoSalida.innerText = textoEncriptado;
+        textoSalida.style.textAlign = "left";
+    }
+}
+
+function desencriptar() {
+    let texto = textoAEncriptar.value.toLowerCase();
+    if(texto.length>0){
+        for (let clave in paraDesencriptar) {
+            if (texto.includes(clave)) {
+                texto = texto.replaceAll(clave, paraDesencriptar[clave]);
+            }
+        }
+        imagenSalida.style.display = "none";
+        textOcultarSalida.style.display = "none";
+        btCopiar.style.display = "block";
+        textoSalida.innerText = texto;
+        textoSalida.style.textAlign = "left";
+    }
+}
+
+
+function copiarTexto() {
+    const textoSalida = document.getElementById('textoSalida');
+    let textoCopiado = textoSalida.innerText;
+    navigator.clipboard.writeText(textoCopiado);
+    mostrarMensaje();
+}
+
+function mostrarMensaje() {
+    const mensaje = document.getElementById('mensajeTemporal');
+    mensaje.classList.add('mostrar');
+
+    setTimeout(() => {
+        mensaje.classList.remove('mostrar');
+    }, 3000);
 }

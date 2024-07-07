@@ -80,6 +80,7 @@ body {
 
 .main__entrada_boton_encriptar:hover{
     background: #648fb9;
+    border: 1px solid #648fb9;
 }
 
 .main__entrada_boton_desencriptar {
@@ -93,6 +94,8 @@ body {
 
 .main__entrada_boton_desencriptar:hover{
     background: #648fb9;
+    border: 1px solid #648fb9;
+    color: white;
 }
 
 .main__salida {
@@ -102,7 +105,7 @@ body {
     height: 37rem;
     margin: -3.5rem 2.5rem 2.5rem 0;
     border-radius: 2rem;
-    /*background-color: rgb(139, 79, 79);*/
+    background-color: white;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
     padding: 2rem;
     font-family: var(--font-inter);
@@ -131,6 +134,33 @@ body {
     height: 3.5rem;
     color: var(--color-text);
     font-size: 1rem;
+}
+
+.main__salida_boton:hover{
+    background: #648fb9;
+    border: 1px solid #648fb9;
+    color: white;
+}
+
+.mensaje {
+    display: flex;
+    text-align: center;
+    font-family: var(--font-inter);
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 18rem;
+    height: 3.5rem;
+    background-color:rgba(10, 56, 113, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 1.5rem;
+    box-shadow  : 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje.mostrar {
+    display: block;
 }
 
 /* Media Query */

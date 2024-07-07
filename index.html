@@ -23,16 +23,18 @@
             </div>
             <div class="main__entrada_botones">
                 <button id="btEncriptar" onclick="encriptarTexto();" class="main__entrada_boton_encriptar">Encriptar</button>
-                <button id="btDesencriptar" class="main__entrada_boton_desencriptar">Desencriptar</button>
+                <button id="btDesencriptar" onclick="desencriptar();" class="main__entrada_boton_desencriptar">Desencriptar</button>
             </div>
         </div>
 
         <div class="main__salida">
-            <img src="./images/notFound.svg" alt="notFound">
-            <p class="main__salida_titulo">Ningún mensaje fue encontrado</p>
-            <p id="textoDesencriptado" class="main__salida_parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
-            <button class="main__salida_boton">Copiar</button>
+            <img id="imagenSalida" src="./images/notFound.svg" alt="notFound">
+            <p id="textOcultar" class="main__salida_titulo">Ningún mensaje fue encontrado</p>
+            <p id="textoSalida" class="main__salida_parrafo">Ingresa el texto que desees encriptar o desencriptar</p>
+            <button id="btCopiar" onclick="copiarTexto()" hidden="true" class="main__salida_boton">Copiar</button>
         </div>
+        <div id="mensajeTemporal" class="mensaje">Mensaje copiado.</div>
+
     </main>
 
     <footer></footer>
