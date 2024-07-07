@@ -40,6 +40,11 @@ function encriptarTexto() {
         btCopiar.style.display = "block";
         textoSalida.innerText = textoEncriptado;
         mainSalida.style.justifyContent = "space-between"
+    } else {
+        imagenSalida.style.display = '';
+        textOcultarSalida.style.display = '';
+        textoSalida.innerText = 'Ningún mensaje fue encontrado';
+        btCopiar.style.display = 'none';
     }
 }
 
@@ -57,6 +62,11 @@ function desencriptar() {
         textoSalida.innerText = texto;
         textoSalida.style.fontWeight = '';
         textoSalida.style.textAlign = "left";
+    } else {
+        imagenSalida.style.display = '';
+        textOcultarSalida.style.display = '';
+        textoSalida.innerText = 'Ningún mensaje fue encontrado';
+        btCopiar.style.display = 'none';
     }
 }
 
