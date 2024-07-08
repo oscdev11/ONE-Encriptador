@@ -46,6 +46,9 @@ function encriptarTexto() {
         textoSalida.innerText = 'Ningún mensaje fue encontrado';
         btCopiar.style.display = 'none';
     }
+    if (isResponsive()) {
+        scrollToBottom();
+    }
 }
 
 function desencriptar() {
@@ -68,6 +71,9 @@ function desencriptar() {
         textoSalida.innerText = 'Ningún mensaje fue encontrado';
         btCopiar.style.display = 'none';
     }
+    if (isResponsive()) {
+        scrollToBottom();
+    }
 }
 
 
@@ -85,4 +91,15 @@ function mostrarMensaje() {
     setTimeout(() => {
         mensaje.classList.remove('mostrar');
     }, 3000);
+}
+
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+}
+
+function isResponsive() {
+    return window.matchMedia("(max-width: 768px)" || "(max-width: 336px)").matches;
 }
