@@ -138,10 +138,10 @@ body, html{
     color: var(--color-text-gray-500);
     font-weight: 550;
     text-align: center;
-    overflow-wrap: break-word; /* Asegura que el texto se ajuste y no se desborde */
+    overflow-wrap: break-word;
     word-wrap: break-word;
-    overflow: auto; /* Agrega scroll en caso de desbordamiento */
-    max-height: 26rem; /* Ajusta este valor según sea necesario */
+    overflow: auto; 
+    max-height: 26rem; 
 }
 
 .main__salida_parrafo{
@@ -189,7 +189,6 @@ body, html{
     display: block;
 }
 
-/* Media Query */
 @media (max-width: 768px) {
 
     .header__logo{
@@ -290,7 +289,6 @@ body, html{
     }
 
     .main__entradas_contenedor{
-        /* padding: 5rem 3rem 0 3rem; */
         height: 100%;
         padding: 1rem 1rem 0 1rem;
 
@@ -350,8 +348,6 @@ body, html{
     }
     
     .main__salida_titulo{
-        /* width: 30%;
-        height: auto; */
         font-size: 1.5rem;
         color: var(--color-text-gray-500);
         font-weight: 550;
